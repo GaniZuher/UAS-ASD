@@ -19,3 +19,14 @@ public static void main(String[] args) {
     for (int i = 0; i < M; i++) {
         parent[i] = i;
 }
+}
+    for (int i = 0; i < N; i++) {
+        String[] relasi = Input.nextLine().split(" ");
+        String nama1 = relasi[0];
+        String nama2 = relasi[2];
+        if (!pencarianKeluarga.containsKey(nama1)) {
+            pencarianKeluarga.put(nama1, index++);
+        }
+        if (!pencarianKeluarga.containsKey(nama2)) {
+            pencarianKeluarga.put(nama2, index++);
+        }
