@@ -1,15 +1,10 @@
 import java.util.*;
 
-public class FamilyTree { private static int find(int[] parent, int x) { if (parent[x] == x) { return x; } return parent[x] = find(parent, parent[x]); }
+public class FamilyTree { private static int cari(int[] parent, int x) { if (parent[x] == x) { return x; } return parent[x] = cari(parent, parent[x]); }
 private static void union(int[] parent, int x, int y) {
-    int rootX = find(parent, x);
-    int rootY = find(parent, y);
-    if (rootX != rootY) {
-        parent[rootY] = rootX;
+    int root1 = cari(parent, x);
+    int root2 = cari(parent, y);
+    if (root1 != root2) {
+        parent[root2] = root1;
     }
 }
-public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-    int M = scanner.nextInt();
-    int N = scanner.nextInt();
-    scanner.nextLine();
