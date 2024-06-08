@@ -8,3 +8,14 @@ private static void union(int[] parent, int x, int y) {
         parent[root2] = root1;
     }
 }
+public static void main(String[] args) {
+    Scanner Input = new Scanner(System.in);
+    int M = Input.nextInt();
+    int N = Input.nextInt();
+    Input.nextLine();
+    Map<String, Integer> pencarianKeluarga = new HashMap<>();
+    int index = 0;
+    int[] parent = new int[M];
+    for (int i = 0; i < M; i++) {
+        parent[i] = i;
+}
