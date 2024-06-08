@@ -19,7 +19,6 @@ public static void main(String[] args) {
     for (int i = 0; i < M; i++) {
         parent[i] = i;
 }
-}
     for (int i = 0; i < N; i++) {
         String[] relasi = Input.nextLine().split(" ");
         String nama1 = relasi[0];
@@ -30,3 +29,14 @@ public static void main(String[] args) {
         if (!pencarianKeluarga.containsKey(nama2)) {
             pencarianKeluarga.put(nama2, index++);
         }
+int keluarga1 = pencarianKeluarga.get(nama1);
+        int keluarga2 = pencarianKeluarga.get(nama2);
+        union(parent, keluarga1, keluarga2);
+    }
+    Set<Integer> TotalKeluarga = new HashSet<>();
+    for (int i = 0; i < M; i++) {
+        TotalKeluarga.add(cari(parent, i));
+    }
+    System.out.println(TotalKeluarga.size());
+}
+}
